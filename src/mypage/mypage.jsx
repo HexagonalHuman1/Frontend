@@ -1,10 +1,10 @@
 import Nav from '../components/Nav';
 
-function Home(){
+function My(){
     return(
-        <>Home
+        <>My
         <Nav/></>
     );
 }
 
-export default Home;
+export default My;
