@@ -9,6 +9,7 @@ import feedpink from '../img/feedpink.png';
 import staticspink from '../img/staticspink.png';
 import homepink from '../img/homepink.png';
 import { Link, useLocation } from 'react-router-dom';
+import Main from '../main/Main';
 
 
 const NavContainer = styled.div`

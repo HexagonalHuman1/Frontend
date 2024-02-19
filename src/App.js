@@ -4,6 +4,9 @@ import Statics from './statics/statics';
 import Home from './home/home'
 import Feed from './feed/feed'
 import My from './mypage/mypage'
+import Prologue from './pages/Prologue';
+import Main from './main/Main';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
