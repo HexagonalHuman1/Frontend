@@ -28,23 +28,25 @@
     font-weight: 600;
 }
 .mypage_menu{
-    padding: 25px 35px;
+    padding: 25px 25px;
     color:#CA3039;
 }
 .mypage_menutitle{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 40px;
+    margin-right: 20px;
 }
 ul{
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 10px;
 }
 li{
     margin: 15px 0px;
 }
 hr{
     border-color:#CA3039;
+    margin-right: 15px;
 }
 /*profile*/
 .profile_container{

@@ -7,18 +7,25 @@ import My from './mypage/mypage'
 import Prologue from './pages/Prologue';
 import Main from './main/Main';
 import SignUp from './pages/SignUp';
+import ProfileSetting from './pages/ProfileSetting';
+import MyPage from './pages/MyPage.js';
+import Profile from './pages/Profile.js';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/prologue' element={<Prologue />} />
-        <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/login' element={<Login />} />
         <Route path='/statics' element={<Statics />} />
         <Route path='/feed' element={<Feed/>}/>
         <Route path='/my' element={<My/>}/>
+
+        <Route path='/prologue' element={<Prologue />} />
+        <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/login' element={<Login />} />
+        <Route path='/profilesetting' element={<ProfileSetting />} />
+        <Route path='/mypage' element={<MyPage/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
   );
