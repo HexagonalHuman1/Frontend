@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import searchImg from "../img/searchImg.png";
 import addDiaryImg from "../img/addDiary.svg";
+import WrittenDiary from "./WrittenDiary";
 
 const SearchBar = styled.div`
   margin-top: 1.94rem;
@@ -44,6 +45,7 @@ export default function Diary() {
         <img src={addDiaryImg} alt="addDiaryImg" style={{cursor: "pointer"}} />
       </AddDiaryButton>
       <MonthRecord>&lt; {currentYear}년 {currentMonth}월 기록 &gt;</MonthRecord>
+      <WrittenDiary />
     </>
   );
 }
