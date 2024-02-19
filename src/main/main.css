@@ -68,3 +68,14 @@
   font-weight: 400;
   line-height: normal;
 }
+.diarySearchBar:focus {
+  outline: none;
+}
+.searchImgButton {
+  border: none;
+  background: inherit;
+  position: absolute;
+  right: 1rem;
+  top: 0.3rem;
+  cursor: pointer;
+}
