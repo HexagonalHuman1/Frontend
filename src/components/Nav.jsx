@@ -4,7 +4,8 @@ import statics from '../img/statsButton.png';
 import feed from '../img/feedButton.png';
 import mybutton from '../img/MyButton.png';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 
 const NavContainer = styled.div`
     width: 100%;
@@ -51,6 +52,7 @@ const OptionContainer = styled.div`
 
 function Nav() {
     const [activeIndex, setActiveIndex] = useState(null);
+    const location = useLocation(); // 현재 경로를 가져옴
 
     const handleItemClick = (index) => {
         setActiveIndex(index);
@@ -59,19 +61,19 @@ function Nav() {
     return (
         <NavContainer>
             <OptionContainer>
-                <NavLink to="/" active={activeIndex === 0} onClick={() => handleItemClick(0)}>홈</NavLink>
+                <NavLink to="/" active={location.pathname === '/'} onClick={() => handleItemClick(0)}>홈</NavLink>
                 <NavButton src={home} alt="홈" onClick={() => handleItemClick(0)} />
             </OptionContainer>
             <OptionContainer>
-                <NavLink to="/" active={activeIndex === 1} onClick={() => handleItemClick(1)}>피드</NavLink>
+                <NavLink to="/" active={location.pathname === '/feed'} onClick={() => handleItemClick(1)}>피드</NavLink>
                 <NavButton src={feed} alt="피드" onClick={() => handleItemClick(1)} />
             </OptionContainer>
             <OptionContainer>
-                <NavLink to="/statics" active={activeIndex === 2} onClick={() => handleItemClick(2)}>통계</NavLink>
+                <NavLink to="/statics" active={location.pathname === '/statics'} onClick={() => handleItemClick(2)}>통계</NavLink>
                 <NavButton src={statics} alt="통계" onClick={() => handleItemClick(2)} />
             </OptionContainer>
             <OptionContainer>
-                <NavLink to="/" active={activeIndex === 3} onClick={() => handleItemClick(3)}>My</NavLink>
+                <NavLink to="/" active={location.pathname === '/my'} onClick={() => handleItemClick(3)}>My</NavLink>
                 <NavButton src={mybutton} alt="My" onClick={() => handleItemClick(3)} />
             </OptionContainer>
         </NavContainer>
