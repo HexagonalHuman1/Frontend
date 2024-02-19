@@ -1,0 +1,158 @@
+.prologue_container, .login_container{
+    background-color: #31383F;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+    font-family: Inter;
+}
+.prologue_subtitle{
+    color: #DD8EA4;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 9px;
+}
+.prologue_title{
+    color: #DD8EA4;
+    font-size: 40px;
+    font-weight: 500;
+}
+.prologue_img{
+    width: 223px;
+    height: 223px;
+    margin-top: 20px;
+    margin-bottom: 78px;
+}
+.Link {
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer; 
+}
+
+/*signup css*/
+.signup_container, .profilesetting_container{
+    background-color: #F2E9EB;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+    font-family: Inter;
+}
+.signup_title, .profilesetting_title{
+    color: #31383F;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top:25px;
+    margin-bottom: 65px;
+}
+.signup_content input, .login_content input{
+    width:270px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #31383F;
+    padding : 10px 0px;
+
+}
+.signup_content input[type='text']{
+    border-bottom: 1px solid #CA3039;
+    margin-bottom: 10px;
+}
+.signup_content input[type='text']::placeholder{
+    color:#CA3039;
+}
+.signup_content input[type='password']{
+    margin-bottom:25px;
+}
+.signup_sub{
+    font-size: 13px;
+    padding: 20px 70px;
+    color:#DD8EA4;
+    margin-bottom:140px;
+}
+.signup_subbtn{
+    font-size: 12px;
+    color: #CA3039;
+    margin-top:10px;
+}
+/*profilesetting css*/
+.profileset_form{
+    width:270px;
+    display: flex;
+}
+.profilesetting_content input{
+    width:200px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #31383F;
+    padding : 5px 0px;
+}
+.profilesetting_title{
+    margin-bottom: 52px;
+}
+.name_title{
+    font-size: 15px;
+    margin-right:35px;
+    font-weight: 400;
+}
+.sub_title{
+    font-size: 15px;
+    margin-right: 6px;
+    font-weight: 400;
+}
+.profileimg_set{
+    background-color: #D9D9D9;
+    padding: 40px;
+    border-radius: 85px;
+    border: 0px;
+    margin-bottom:55px;
+}
+.name{
+    margin-bottom: 30px;
+}
+.intro{
+    margin-bottom: 40px;
+    border-bottom: 1px solid #CA3039 !important;
+}
+.intro::placeholder{
+    color:#CA3039;
+}
+
+/*login*/
+.login_content input{
+    border-bottom-color: #DD8EA4;
+    color : #DD8EA4;
+}
+.email{
+    margin-top:35px;
+    margin-bottom: 10px;
+}
+.pw{
+    margin-bottom: 25px;
+}
+.login_content input[type='text']::placeholder{
+    color:#DD8EA4;
+}
+.login_content input[type='password']::placeholder{
+    color:#DD8EA4;
+}
+.login_form{
+    margin-bottom: 80px;;
+}
+.login_subbtn{
+    font-size: 12px;
+    color: #fff;
+    margin-top:10px;
+}
+.login_sub, .login_join{
+    font-size: 12px;
+    color: #fff;
+    margin-top: 60px;
+}
+.login_join{
+    font-weight: 900;
+}
