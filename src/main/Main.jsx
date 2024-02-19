@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Header from "../Components/Header";
+import Header from "../components/Header";
 import "./main.css";
-import ToDo from "./ToDo";
+import ToDo from "./Todo";
 import Diary from "./Diary";
 
 export default function Main() {

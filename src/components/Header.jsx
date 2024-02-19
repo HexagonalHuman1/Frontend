@@ -1,5 +1,3 @@
-// Header.jsx
-
 import styled from "styled-components";
 
 const MainHeader = styled.p`

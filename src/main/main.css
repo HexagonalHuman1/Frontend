@@ -1,0 +1,70 @@
+/* todo or 일기 선택하는 버튼  */
+.selectButtonBox {
+  display: flex;
+}
+.selectButton {
+  width: 50%;
+  height: 2.75rem;
+  color: #000;
+  font-family: Inter;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.buttonActive {
+  border-bottom: 1px solid #000;
+}
+
+/* addtodobutton */
+.addToDoButtonBox {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 20.25rem;
+  height: 2.125rem;
+  flex-shrink: 0;
+  border-radius: 1.3125rem;
+  border: 1px solid hsl(0, 0%, 57%);
+  background: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.addToDoButton {
+  color: #000;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: #FFF;
+  border: none;
+  cursor: pointer;
+}
+
+/* Diary 부분 */
+.diarySearchBar {
+  width: 19.4375rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  border: 0.4px solid #F2E9EB;
+  background: #EAEAEA;
+  backdrop-filter: blur(2px);
+  padding-left: 0.75rem;
+}
+.diarySearchBar::placeholder {
+  color: #F08484;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
