@@ -12,6 +12,8 @@ import MyPage from './pages/MyPage.js';
 import Profile from './pages/Profile.js';
 import AddTodoList from './todo/AddTodoList.jsx';
 import CreateDairy from './diary/CreateDiary.jsx';
+import Recommend from './pages/Recommend.js';
+import RecommendResult from './pages/RecommendResult.js';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/addTodoList' element={<AddTodoList/>}/>
         <Route path='/createDiary' element={<CreateDairy/>}/>
+        <Route path='/recommend' element={<Recommend/>}/>
+        <Route path='/recommendresult' element={<RecommendResult/>}/>
       </Routes>
     </BrowserRouter>
   );
