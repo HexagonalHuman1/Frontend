@@ -2,6 +2,7 @@ import styled from "styled-components";
 import searchImg from "../img/searchImg.png";
 import addDiaryImg from "../img/addDiary.svg";
 import WrittenDiary from "./WrittenDiary";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = styled.div`
   margin-top: 1.94rem;
@@ -25,9 +26,14 @@ const MonthRecord = styled.p`
 `
 
 export default function Diary() {
+  let navigate = useNavigate();
   const today = new Date();
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth() + 1;
+
+  function moveCreateDiary() {
+    navigate("/createDiary");
+  }
 
   return (
     <>
@@ -41,7 +47,7 @@ export default function Diary() {
           <img src={searchImg} alt="searchImg" />
         </button>
       </SearchBar>
-      <AddDiaryButton>
+      <AddDiaryButton onClick={moveCreateDiary}>
         <img src={addDiaryImg} alt="addDiaryImg" style={{cursor: "pointer"}} />
       </AddDiaryButton>
       <MonthRecord>&lt; {currentYear}년 {currentMonth}월 기록 &gt;</MonthRecord>
