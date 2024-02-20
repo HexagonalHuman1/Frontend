@@ -88,7 +88,7 @@ const SignUp = () => {
             />
             <br />
             <Mbutton type="submit" color={'#000'}>
-            <StyledLink to="/">가입하기</StyledLink>
+            <StyledLink to="/recommend">가입하기</StyledLink>
             </Mbutton>
         </form>
         </div>

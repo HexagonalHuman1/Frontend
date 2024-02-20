@@ -11,6 +11,7 @@ const StyledButton = styled.button`
     font-family: Inter;
     font-size: 15px;
     font-weight: 400;
+    cursor: pointer;
 
   color: ${(props) => props.color || "#31383F"};
   background: ${(props) => props.background || "#DD8EA4"};
