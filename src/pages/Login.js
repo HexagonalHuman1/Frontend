@@ -2,7 +2,6 @@ import React from 'react';
 import "../css/Prologue.css";
 import { Link } from 'react-router-dom';
 import Mbutton from '../components/Mbutton.js';
-import Cbutton from '../components/Cbutton.js';
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
@@ -22,8 +21,6 @@ const Login = () => {
                     <input type="password" placeholder='비밀번호' className='pw'/>
                     <Mbutton color={'#000'}>로그인</Mbutton>
                 </form>
-                <Cbutton></Cbutton>
-                <div className='login_subbtn'>소셜로 로그인하기</div>
                 <StyledLink to='/signup'><div className='login_sub'>아직 계정이 없나요?
                 <span className='login_join'> 회원가입하기</span></div></StyledLink>
             </div>

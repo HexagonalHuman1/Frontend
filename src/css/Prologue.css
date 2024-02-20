@@ -57,15 +57,20 @@
     padding : 10px 0px;
 
 }
-.signup_content input[type='text']{
-    border-bottom: 1px solid #CA3039;
+.signup_content input{
     margin-bottom: 10px;
 }
-.signup_content input[type='text']::placeholder{
-    color:#CA3039;
+.signup_content input[type='text']{
+    margin-bottom: 5px;
 }
-.signup_content input[type='password']{
-    margin-bottom:25px;
+.signup_content input:focus {
+    outline: none;
+    border-color: #CA3039;
+    placeholder-color : #CA3039;
+}  
+
+#intro{
+    margin-bottom: 50px;
 }
 .signup_sub{
     font-size: 13px;
