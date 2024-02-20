@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import "./main.css";
-import ToDo from "./Todo";
-import Diary from "./Diary";
+import ToDo from "../todo/Todo";
+import Diary from "../diary/Diary";
+import Nav from "../components/Nav";
+
 
 export default function Main() {
   const [todoButton, setToDoButton] = useState(true);
@@ -27,6 +29,8 @@ export default function Main() {
       </div>
       {todoButton && <ToDo />}
       {diaryButton && <Diary />}
+
+      <Nav />
     </>
   )
 }

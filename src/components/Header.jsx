@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const MainHeader = styled.p`
@@ -42,10 +43,11 @@ const NoticeSubText = styled.p`
 `
 
 export default function Header() {
+  const [userName, setUserName] = useState("User");
   return (
     <>
       <div>
-        <MainHeader>user님의 쉼</MainHeader>
+        <MainHeader>{userName}님의 쉼</MainHeader>
       </div>
       <NoticeBox>
         <NoticeMainText>공지사항</NoticeMainText>

@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import dots from "../img/dots.png";
 
 const DiaryContainer = styled.div`
   width: 20.6875rem;
@@ -7,7 +9,7 @@ const DiaryContainer = styled.div`
   border-radius: 1.4375rem;
   border: 1px solid #D2D2D2;
   background: #FFF;
-  positeion: relative;
+  position: relative;
   margin: 0 auto;
   margin-top: 0.44rem;
 `
@@ -35,10 +37,13 @@ const WrittenDate = styled.p`
 `
 
 export default function WrittenDiary() {
+  const [userTitle,setUserTitle] = useState("사용자가 설정한 제목");
+  const [userDate, setUserDate] = useState("사용자가 작성한 날짜");
   return (
     <DiaryContainer>
-      <DiaryText>사용자가 설정한 제목</DiaryText>
-      <WrittenDate>사용자가 작성한 날짜</WrittenDate>
+      <img src={dots} alt="dotsImg" style={{width: "1.25rem", height: "1.5rem", position: "absolute", top: "1.2rem", right: "1.87rem", cursor: "pointer"}} />
+      <DiaryText>{userTitle}</DiaryText>
+      <WrittenDate>{userDate}</WrittenDate>
     </DiaryContainer>
   )
 }

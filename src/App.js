@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp';
 import ProfileSetting from './pages/ProfileSetting';
 import MyPage from './pages/MyPage.js';
 import Profile from './pages/Profile.js';
+import AddTodoList from './todo/AddTodoList.jsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/profilesetting' element={<ProfileSetting />} />
         <Route path='/mypage' element={<MyPage/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/addTodoList' element={<AddTodoList/>}/>
       </Routes>
     </BrowserRouter>
   );
