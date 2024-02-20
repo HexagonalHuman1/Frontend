@@ -71,8 +71,8 @@ function Nav() {
                 return location.pathname === '/feed' ? feedpink : feed;
             case 'statics':
                 return location.pathname === '/statics' ? staticspink : statics;
-            case 'my':
-                return location.pathname === '/my' ? mybuttonpink : mybutton;
+            case 'mypage':
+                return location.pathname === '/mypage' ? mybuttonpink : mybutton;
             default:
                 return;
         }
@@ -93,8 +93,8 @@ function Nav() {
                 <Link to='/statics'><NavButton src={getIconSource('statics')} alt="통계" onClick={() => setActiveIndex(2)} /></Link>
             </OptionContainer>
             <OptionContainer>
-                <NavLink to="/my" active={location.pathname === '/my'}>My</NavLink>
-                <Link to='/my'><NavButton src={getIconSource('my')} alt="My" onClick={() => setActiveIndex(3)} /></Link>
+                <NavLink to="/mypage" active={location.pathname === '/mypage'}>My</NavLink>
+                <Link to='/mypage'><NavButton src={getIconSource('mypage')} alt="Mypage" onClick={() => setActiveIndex(3)} /></Link>
             </OptionContainer>
         </NavContainer>
     );

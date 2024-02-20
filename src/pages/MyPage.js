@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/MyPage.css';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import Nav from '../components/Nav';
 
 const StyledLink = styled(Link)`
     text-decoration: none; 
@@ -37,6 +38,7 @@ const MyPage = () => {
                 <li>로그아웃</li>
             </ul>
         </div>
+        <Nav/>
         </div>
     );
 };
