@@ -4,7 +4,6 @@ import Mbutton from "../components/Mbutton"
 import "../css/Prologue.css"
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
-import axios from 'axios';
 
 const StyledLink = styled(Link)`
     text-decoration: none; 
