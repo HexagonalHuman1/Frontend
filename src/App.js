@@ -11,6 +11,7 @@ import ProfileSetting from './pages/ProfileSetting';
 import MyPage from './pages/MyPage.js';
 import Profile from './pages/Profile.js';
 import AddTodoList from './todo/AddTodoList.jsx';
+import CreateDairy from './diary/CreateDiary.jsx';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/mypage' element={<MyPage/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/addTodoList' element={<AddTodoList/>}/>
+        <Route path='/createDiary' element={<CreateDairy/>}/>
       </Routes>
     </BrowserRouter>
   );
