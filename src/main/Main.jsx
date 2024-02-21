@@ -4,11 +4,13 @@ import "./main.css";
 import ToDo from "../todo/Todo";
 import Diary from "../diary/Diary";
 import Nav from "../components/Nav";
+import List from "../todo/List";
 
 
 export default function Main() {
   const [todoButton, setToDoButton] = useState(true);
   const [diaryButton, setDiaryButton] = useState(false);
+  const [show,setShow] = useState(true); // 임시 코드 (할 일 보여지게)
 
   function handleDiaryActive() {
     setDiaryButton(true);
@@ -29,6 +31,8 @@ export default function Main() {
       </div>
       {todoButton && <ToDo />}
       {diaryButton && <Diary />}
+
+      {show && <div style={{marginTop: "1.75rem", display: "flex", flexDirection: "column", gap:"0.61rem", marginLeft: "1.56rem"}}><List /></div>}
 
       <Nav />
     </>
