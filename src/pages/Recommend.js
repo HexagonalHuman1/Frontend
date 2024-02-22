@@ -5,7 +5,6 @@ import { dummy } from '../components/btnData';
 import '../css/recommend.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Mbutton from '../components/Mbutton';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
@@ -24,50 +23,37 @@ const Recommend = () => {
         slidesToScroll: 2,
     };
     const [currentClick, setCurrentClick] = useState(null);
-    const [prevClick, setPrevClick] = useState(null);
+    const [clickedCount, setClickedCount] = useState(0);
+    const totalButtons = 5; // 원하는 버튼의 총 개수
+      
+    const handleButtonClick = () => {
+        setClickedCount(prevCount => prevCount + 1);
+        if (clickedCount + 1 === totalButtons) {
+          alert('모든 버튼을 클릭해야 합니다!');
+        }
+    };
     
     const handleClick = (id) => {
         setCurrentClick(id);
         console.log(id);
-        if(id=='1'){
-            const target = document.getElementById('2');
-            target.disabled = true;
+        const buttonsMapping = {
+            '1': '2',
+            '2': '1',
+            '3': '4',
+            '4': '3',
+            '5': '6',
+            '6': '5',
+            '7': '8',
+            '8': '7',
+            '9': '10',
+            '10': '9'
         };
-        if(id=='2'){
-            const target = document.getElementById('1');
-            target.disabled = true;
-        };
-        if(id=='3'){
-            const target = document.getElementById('4');
-            target.disabled = true;
-        };
-        if(id=='4'){
-            const target = document.getElementById('3');
-            target.disabled = true;
-        };
-        if(id=='5'){
-            const target = document.getElementById('6');
-            target.disabled = true;
-        };
-        if(id=='6'){
-            const target = document.getElementById('5');
-            target.disabled = true;
-        };
-        if(id=='7'){
-            const target = document.getElementById('8');
-            target.disabled = true;
-        }
-        if(id=='8'){
-            const target = document.getElementById('7');
-            target.disabled = true;
-        }
-        if(id=='9'){
-            const target = document.getElementById('10');
-            target.disabled = true;
-        }
-        if(id=='10'){
-            const target = document.getElementById('9');
-            target.disabled = true;
+        const targetId = buttonsMapping[id];
+        if (targetId) {
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.disabled = true;
+            }
         }
     };
 
@@ -79,7 +65,7 @@ const Recommend = () => {
             </div>
             <Slider {...settings}>
                 {dummy.results.map((item) => (
-                    <button key={item.id} id={item.id} className='buttonBox'>
+                    <button key={item.id} id={item.id} className='buttonBox' onClick={handleButtonClick}>
                         <RecommendBtn 
                             id={item.id}
                             btnSub={item.btnSub} 
@@ -91,7 +77,7 @@ const Recommend = () => {
                 ))}
             </Slider>
             <div className='nextBtn'>
-            <StyledLink to='/recommendresult'><Mbutton>다음</Mbutton></StyledLink>
+            <StyledLink to='/recommendresult'><button className="recommendBtn" disabled={clickedCount !== totalButtons}>다음</button></StyledLink>
             </div>
         </div>
     );
