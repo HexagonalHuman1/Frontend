@@ -31,13 +31,13 @@ const DeleteList = styled.p`
   right: 0;
 `
 
-export default function TodoList({content}) {
+export default function TodoList({content, handleDeleteList}) {
   return (
     <ListTextContainer>
       <div>
         <RecommendList>{content}</RecommendList>
       </div>
-      <DeleteList>삭제하기</DeleteList>
+      <DeleteList onClick={() => handleDeleteList(content)}>삭제하기</DeleteList>
     </ListTextContainer>
   )
 }

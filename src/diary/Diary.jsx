@@ -2,7 +2,10 @@ import styled from "styled-components";
 import searchImg from "../img/searchImg.png";
 import addDiaryImg from "../img/addDiary.svg";
 import WrittenDiary from "./WrittenDiary";
+import ModifyModal from "../components/ModifyModal";
 import { useNavigate } from "react-router-dom";
+import Overlay from "../components/Overlay";
+import { useState } from "react";
 
 const SearchBar = styled.div`
   margin-top: 1.94rem;
@@ -25,7 +28,7 @@ const MonthRecord = styled.p`
   line-height: normal;
 `
 
-export default function Diary() {
+export default function Diary({edit, setEdit}) {
   let navigate = useNavigate();
   const today = new Date();
   const currentYear = today.getFullYear();
@@ -35,8 +38,14 @@ export default function Diary() {
     navigate("/createDiary");
   }
 
+  const handleCloseEdit = () => {
+    setEdit(false);
+  }
+
   return (
     <>
+      {edit && <ModifyModal handleCloseEdit={handleCloseEdit} />}
+      <Overlay edit={edit} />
       <SearchBar>
         <input
           type="text"
@@ -51,7 +60,7 @@ export default function Diary() {
         <img src={addDiaryImg} alt="addDiaryImg" style={{cursor: "pointer"}} />
       </AddDiaryButton>
       <MonthRecord>&lt; {currentYear}년 {currentMonth}월 기록 &gt;</MonthRecord>
-      <WrittenDiary />
+      <WrittenDiary eidt={edit} setEdit={setEdit} />
     </>
   );
 }

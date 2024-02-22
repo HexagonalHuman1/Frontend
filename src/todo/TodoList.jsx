@@ -31,13 +31,13 @@ const AddList = styled.p`
   right: 0;
 `
 
-export default function TodoList({content}) {
+export default function TodoList({content, handleAddList}) {
   return (
     <ListTextContainer>
       <div>
         <RecommendList>{content}</RecommendList>
       </div>
-      <AddList>추가하기</AddList>
+      <AddList onClick={() => handleAddList(content)}>추가하기</AddList>
     </ListTextContainer>
   )
 }

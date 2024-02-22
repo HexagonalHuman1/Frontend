@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import dots from "../img/dots.png";
+import ModifyModal from "../components/ModifyModal";
 
 const DiaryContainer = styled.div`
   width: 20.6875rem;
@@ -36,12 +37,17 @@ const WrittenDate = styled.p`
   text-align: center;
 `
 
-export default function WrittenDiary() {
+export default function WrittenDiary({edit, setEdit}) {
   const [userTitle,setUserTitle] = useState("사용자가 설정한 제목");
   const [userDate, setUserDate] = useState("사용자가 작성한 날짜");
+
+  const handleEdit = () => {
+    setEdit(true);
+  }
+
   return (
     <DiaryContainer>
-      <img src={dots} alt="dotsImg" style={{width: "1.25rem", height: "1.5rem", position: "absolute", top: "1.2rem", right: "1.87rem", cursor: "pointer"}} />
+      <img src={dots} alt="dotsImg" style={{width: "1.25rem", height: "1.5rem", position: "absolute", top: "1.2rem", right: "1.87rem", cursor: "pointer"}} onClick={handleEdit} />
       <DiaryText>{userTitle}</DiaryText>
       <WrittenDate>{userDate}</WrittenDate>
     </DiaryContainer>
