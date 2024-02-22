@@ -28,9 +28,6 @@ const Recommend = () => {
       
     const handleButtonClick = () => {
         setClickedCount(prevCount => prevCount + 1);
-        if (clickedCount + 1 === totalButtons) {
-          alert('모든 버튼을 클릭해야 합니다!');
-        }
     };
     
     const handleClick = (id) => {
