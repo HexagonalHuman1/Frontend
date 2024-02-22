@@ -88,6 +88,10 @@ export default function AddTodoList() {
   function moveMainHandler() {
     navigate("/");
   }
+
+  function moveSelectedMainHandler() {
+    navigate("/selectedMain", {state: { selectedContents }});
+  }
   return (
     <BodyContainer>
       <img src={closeImg} alt="closeImg" onClick={moveMainHandler} style={{cursor: "pointer", position: "absolute", top: "0.62rem", right: "0.97rem"}} />
@@ -115,7 +119,7 @@ export default function AddTodoList() {
 
       <SelectDate />
 
-      <CreateButton onClick={moveMainHandler}>이대로 만들래요</CreateButton>
+      <CreateButton onClick={moveSelectedMainHandler}>이대로 만들래요</CreateButton>
     </BodyContainer>
   )
 }

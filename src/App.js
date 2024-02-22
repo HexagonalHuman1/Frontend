@@ -14,12 +14,14 @@ import AddTodoList from './todo/AddTodoList.jsx';
 import CreateDairy from './diary/CreateDiary.jsx';
 import Recommend from './pages/Recommend.js';
 import RecommendResult from './pages/RecommendResult.js';
+import SelectedMain from './main/SelectedMain.jsx';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='/selectedMain' element={<SelectedMain />} />
         <Route path='/statics' element={<Statics />} />
         <Route path='/feed' element={<Feed/>}/>
         <Route path='/my' element={<My/>}/>

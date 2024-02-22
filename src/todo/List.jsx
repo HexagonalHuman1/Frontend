@@ -46,8 +46,7 @@ const DeleteText = styled.p`
   right: 0;
 `
 
-export default function List() {
-  const [listContent, setListContent] = useState("내용");
+export default function List({item, handleDeleteList}) {
   const [complete, setComplete] = useState(false);
 
   const handleComplete = () => {
@@ -56,8 +55,8 @@ export default function List() {
   return (
     <ListContainer>
       <CheckBox onClick={handleComplete} active={complete} />
-      <ListContent>{listContent}</ListContent>
-      <DeleteText>삭제</DeleteText>
+      <ListContent>{item}</ListContent>
+      <DeleteText onClick={() => handleDeleteList(item)}>삭제</DeleteText>
     </ListContainer>
   )
 }
