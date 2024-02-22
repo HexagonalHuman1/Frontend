@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useCallback  } from 'react';
 import "../css/recommend.css";
 
-export default function RecommendBtn({ id, btnSub, btnTitle, img_path, currentClick, onClick }) {
+export default function RecommendBtn({ id, btnSub, btnTitle, img_path, currentClick, onClick })
+ {
     useEffect(() => {
         if (id === currentClick) {
             let current = document.getElementById(id);
             current.style.backgroundColor = '#DD8EA4';
-            current.style.color = 'black';
+            current.style.color = 'white';
         }
     }, [currentClick, id]);
 

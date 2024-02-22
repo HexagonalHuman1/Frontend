@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import Slider from 'react-slick';
 import RecommendBtn from '../components/RecommendBtn';
 import { dummy } from '../components/btnData';
@@ -24,10 +24,51 @@ const Recommend = () => {
         slidesToScroll: 2,
     };
     const [currentClick, setCurrentClick] = useState(null);
+    const [prevClick, setPrevClick] = useState(null);
     
     const handleClick = (id) => {
         setCurrentClick(id);
         console.log(id);
+        if(id=='1'){
+            const target = document.getElementById('2');
+            target.disabled = true;
+        };
+        if(id=='2'){
+            const target = document.getElementById('1');
+            target.disabled = true;
+        };
+        if(id=='3'){
+            const target = document.getElementById('4');
+            target.disabled = true;
+        };
+        if(id=='4'){
+            const target = document.getElementById('3');
+            target.disabled = true;
+        };
+        if(id=='5'){
+            const target = document.getElementById('6');
+            target.disabled = true;
+        };
+        if(id=='6'){
+            const target = document.getElementById('5');
+            target.disabled = true;
+        };
+        if(id=='7'){
+            const target = document.getElementById('8');
+            target.disabled = true;
+        }
+        if(id=='8'){
+            const target = document.getElementById('7');
+            target.disabled = true;
+        }
+        if(id=='9'){
+            const target = document.getElementById('10');
+            target.disabled = true;
+        }
+        if(id=='10'){
+            const target = document.getElementById('9');
+            target.disabled = true;
+        }
     };
 
     return (
