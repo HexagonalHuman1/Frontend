@@ -54,10 +54,19 @@ const DayText = styled.p`
     `}
 `;
 
-export default function TodoDate() {
+const DateActiveBox = styled.div`
+  width: 1.1875rem;
+  height: 1.1875rem;
+  border-radius: 0.9375rem;
+  background: ${(props) => props.divIndex && props.active ? "#FFB9B9" : "#D2D2D2"};
+  border: none;
+`
+
+export default function TodoDate({active}) {
   const today = new Date();
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth() + 1;
+  const currentDate = today.getDay();
   const days = ["월", "화", "수", "목", "금", "토", "일"];
 
   return (
@@ -94,14 +103,9 @@ export default function TodoDate() {
               >
                 {day}
               </DayText>
-              <div
-                style={{
-                  width: "1.1875rem",
-                  height: "1.1875rem",
-                  borderRadius: "0.9375rem",
-                  background: "#D2D2D2",
-                  border: "none",
-                }}
+              <DateActiveBox
+                active={active}
+                divIndex={currentDate === index+1}
               />
             </DateContainer>
           );

@@ -46,11 +46,13 @@ const DeleteText = styled.p`
   right: 0;
 `
 
-export default function List({item, handleDeleteList}) {
+export default function List({item, handleDeleteList, handleCompleteChange}) {
   const [complete, setComplete] = useState(false);
 
   const handleComplete = () => {
-    setComplete(!complete);
+    const newComplete = !complete;
+    setComplete(newComplete);
+    handleCompleteChange(newComplete);
   }
   return (
     <ListContainer>
