@@ -34,12 +34,12 @@ const Profile = () => {
                     <Img src={human} />
                 </ImgContainer>
                 </div>
-                <div className='profile_name'>사용자 이름</div>
+                <div className='profile_name'>제준</div>
                 <form className='profile_form'>
                     <div className='profile_input'>
-                        <input type="text" placeholder='써놓은 한줄소개'/><br/>
-                        <input type="text" placeholder='사용 중인 이메일'/><br/>
-                        <input type="text" placeholder='사용 중인 패스워드'/>
+                        <input type="text" placeholder='안녕하세요'/><br/>
+                        <input type="text" placeholder='33.beautifulboy@gmail.com'/><br/>
+                        <input type="text" placeholder='1234'/>
                     </div>
                     <StyledLink to="/mypage"><Mbutton>저장</Mbutton></StyledLink>
                 </form>

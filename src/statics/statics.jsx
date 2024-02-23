@@ -216,7 +216,7 @@ margin-bottom:4.31rem;
 `;
 
 const Statics = () => {
-    const [user, setUser]= useState("이름");
+    const [user, setUser]= useState("제준");
     const [date, setDate]= useState(2);
 
     return (
