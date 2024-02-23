@@ -12,7 +12,6 @@ export default function ToDo({content}) {
   useEffect(() => {
     const currentColorActive = localStorage.getItem("color") === "true";
     setActive(currentColorActive);
-    console.log(currentColorActive);
   }, []);
 
   let navigate = useNavigate();
@@ -34,12 +33,12 @@ export default function ToDo({content}) {
   }
 
   useEffect(() => {
-    localStorage.setItem("color", String(active));
+    localStorage.setItem("color", active.toString());
   },[active]);
 
   useEffect(() => {
     setActive(completedCount === mainList.length && mainList.length > 0 )
-  }, [completedCount, mainList.length, active]);
+  }, [completedCount, mainList.length]);
 
   return (
     <>
