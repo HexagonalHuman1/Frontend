@@ -11,10 +11,12 @@ const MainHeader = styled.p`
   margin: 0;
   padding-top: 1.56rem;
   padding-bottom: 0.94rem;
+  backgroud-color:#fff;
 `
 
 const NoticeBox = styled.img`
   width : 350px;
+  margin-bottom : -7px;
 `
 
 export default function Header() {

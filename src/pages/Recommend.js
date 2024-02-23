@@ -24,6 +24,8 @@ const Recommend = () => {
     };
     const [currentClick, setCurrentClick] = useState(null);
     const [clickBtn, setClickBtn] = useState(0);
+    const [isCheck, setIsCheck] = useState(false);
+
 
     const handleClick = (id) => {
         setCurrentClick(id);
@@ -45,15 +47,25 @@ const Recommend = () => {
             const target = document.getElementById(targetId);
             if (target) {
                 target.disabled = true;
+                setIsCheck(true);
+                let current = document.getElementById(id);
+                current.style.backgroundColor = '#DD8EA4';
+                current.style.color = 'white';
             }
+            if(target && isCheck){
+                target.disabled = false;
+                setIsCheck(false);
+                let current = document.getElementById(id);
+                current.style.backgroundColor = '#fff';
+                current.style.color = 'black';
+            }
+            setClickBtn(prevCount => prevCount + 1);
         }
-        setClickBtn(prevCount => prevCount + 1);
     };
     const handleNext = () => {
         if (clickBtn >= 4) {
             window.location.href = "/recommendresult";
         } else {
-            // 그 이하인 경우 알림창 표시
             alert('모든 질문에 응답해주세요.');
         }
     };

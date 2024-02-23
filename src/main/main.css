@@ -6,7 +6,6 @@
   width: 50%;
   height: 2.75rem;
   color: #000;
-  font-family: Inter;
   font-size: 0.625rem;
   font-style: normal;
   font-weight: 600;
@@ -40,7 +39,6 @@
 }
 .addToDoButton {
   color: #000;
-  font-family: Inter;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
@@ -63,7 +61,6 @@
 }
 .diarySearchBar::placeholder {
   color: #F08484;
-  font-family: Inter;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
