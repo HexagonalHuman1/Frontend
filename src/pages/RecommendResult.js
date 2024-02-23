@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "../css/recommend.css"
 import Mbutton from '../components/Mbutton';
 import { Link } from 'react-router-dom';
@@ -11,11 +11,12 @@ const StyledLink = styled(Link)`
 `;
 
 const RecommendResult = () => {
+    const [user, setUser]= useState("제준");
     return (
         <div className='result_container'>
             <div className='result_content'>
                 <div className='result_sub'>반영완료</div>
-                <div className='result_title'>사용자 님에게 꼭 맞는<br/>
+                <div className='result_title'>{user}님에게 꼭 맞는<br/>
                  쉼의 생활을 가져올게요</div>
                 <div>
                     <img src="img/Result.png" />

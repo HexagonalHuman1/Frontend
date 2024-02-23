@@ -18,7 +18,7 @@ const NoticeBox = styled.img`
 `
 
 export default function Header() {
-  const [userName, setUserName] = useState("User");
+  const [userName, setUserName] = useState("제준");
   return (
     <>
       <div>

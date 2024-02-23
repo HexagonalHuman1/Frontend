@@ -26,12 +26,11 @@ const NavContainer = styled.div`
 `;
 
 const NavLink = styled(Link)`
-    color: ${props => props.active ? '#DD8EA4' : '#FFF'};
+    color: ${props => props.active ? '#DD8EA4' : '#bebebe'};
     text-align: center;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     line-height: normal;
     margin-bottom: 3px;
     margin-top: 5px;
@@ -48,6 +47,7 @@ const NavButton = styled.img`
     &:hover {
         cursor: pointer;
     }
+    margin-bottom:-5px;
 `;
 
 const OptionContainer = styled.div`

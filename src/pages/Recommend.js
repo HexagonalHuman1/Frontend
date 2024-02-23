@@ -57,11 +57,12 @@ const Recommend = () => {
             alert('모든 질문에 응답해주세요.');
         }
     };
+    const [user, setUser]= useState("제준");
 
     return (
         <div className="recommend_container">
             <div className="reTitle">
-                사용자 님의 <br />
+                {user}님의 <br />
                 쉼의 취향을 알아볼게요
             </div>
             <Slider {...settings}>
