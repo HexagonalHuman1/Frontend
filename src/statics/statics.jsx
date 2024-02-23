@@ -22,7 +22,6 @@ const Arrow=styled.img`
 const Header = styled.div`
 color: #000;
 text-align: center;
-font-family: Inter;
 font-size: 1.25rem;
 font-style: normal;
 font-weight: 600;
@@ -33,7 +32,7 @@ const Div=styled.div`
     height: 3.27rem;
     border-radius: 1.1875rem;
     background: #31383F;
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,7 +47,6 @@ const DivContainer=styled.div`
 
 const Line1 = styled.div`
 color: #DD8EA4;
-font-family: Inter;
 font-size: 0.75rem;
 font-style: normal;
 font-weight: 600;
@@ -58,7 +56,6 @@ line-height: normal;
 const Date = styled.div`
 color: #DD8EA4;
 text-align: center;
-font-family: Inter;
 font-size: 1.5rem;
 font-style: normal;
 font-weight: 400;
@@ -80,7 +77,6 @@ const ThisMonthTitle=styled.div`
     color: #000;
 
 text-align: center;
-font-family: Inter;
 font-size: 0.75rem;
 font-style: normal;
 font-weight: 700;
@@ -91,7 +87,6 @@ const PageArrow=styled.div`
     display:flex;
     color: #000;
 text-align: right;
-font-family: Inter;
 font-size: 0.75rem;
 font-style: normal;
 font-weight: 700;
@@ -113,7 +108,6 @@ const Hr=styled.hr`
 const Percent=styled.div`    
     color: #CA3039;
     text-align: center;
-    font-family: Inter;
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
@@ -124,7 +118,6 @@ const Percent=styled.div`
 const Success=styled.div`    
 color: #CA3039;
 text-align: center;
-font-family: Inter;
 font-size: 0.75rem;
 font-style: normal;
 font-weight: 400;
@@ -161,12 +154,12 @@ flex-direction: row;
 padding-left: 1.66rem;
 padding-right: 1.66rem;
 justify-content: space-between;
+padding-bottom : 2rem;
 `;
 
 const Day=styled.div`
 color: #000;
 text-align: right;
-font-family: Inter;
 font-size: 0.625rem;
 font-style: normal;
 font-weight: 400;
@@ -212,7 +205,7 @@ const ImgContainer=styled.div`
 display:flex;
 justify-content:center;
 margin-top:2.81rem;
-margin-bottom:4.31rem;
+margin-bottom:2.31rem;
 `;
 
 const Statics = () => {
