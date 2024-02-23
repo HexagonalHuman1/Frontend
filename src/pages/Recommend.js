@@ -5,7 +5,7 @@ import { dummy } from '../components/btnData';
 import '../css/recommend.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
@@ -23,13 +23,8 @@ const Recommend = () => {
         slidesToScroll: 2,
     };
     const [currentClick, setCurrentClick] = useState(null);
-    const [clickedCount, setClickedCount] = useState(0);
-    const totalButtons = 5; // 원하는 버튼의 총 개수
-      
-    const handleButtonClick = () => {
-        setClickedCount(prevCount => prevCount + 1);
-    };
-    
+    const [clickBtn, setClickBtn] = useState(0);
+
     const handleClick = (id) => {
         setCurrentClick(id);
         console.log(id);
@@ -52,17 +47,27 @@ const Recommend = () => {
                 target.disabled = true;
             }
         }
+        setClickBtn(prevCount => prevCount + 1);
     };
+    const handleNext = () => {
+        if (clickBtn >= 4) {
+            window.location.href = "/recommendresult";
+        } else {
+            // 그 이하인 경우 알림창 표시
+            alert('모든 질문에 응답해주세요.');
+        }
+    };
+    const [user, setUser]= useState("제준");
 
     return (
         <div className="recommend_container">
             <div className="reTitle">
-                사용자 님의 <br />
+                {user}님의 <br />
                 쉼의 취향을 알아볼게요
             </div>
             <Slider {...settings}>
                 {dummy.results.map((item) => (
-                    <button key={item.id} id={item.id} className='buttonBox' onClick={handleButtonClick}>
+                    <button key={item.id} id={item.id} className='buttonBox'>
                         <RecommendBtn 
                             id={item.id}
                             btnSub={item.btnSub} 
@@ -74,7 +79,7 @@ const Recommend = () => {
                 ))}
             </Slider>
             <div className='nextBtn'>
-            <StyledLink to='/recommendresult'><button className="recommendBtn" disabled={clickedCount !== totalButtons}>다음</button></StyledLink>
+                <button className="recommendBtn" onClick={handleNext}>다음</button>
             </div>
         </div>
     );

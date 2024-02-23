@@ -2,6 +2,7 @@
 .recommend_container{
     background-color: #F2E9EB;
     min-height: 100vh;
+    font-family: "source-han-sans-korean", sans-serif;
 }
 .reTitle{
     padding-top: 47px;
@@ -23,6 +24,7 @@
     margin-left:20px;
     margin-bottom : 45px;
     cursor: pointer;
+    font-family: "source-han-sans-korean", sans-serif;
 }
 .btnSub{
     font-size: 12px;
@@ -51,12 +53,12 @@
     border: none;
     outline: none;
     text-align: center;
-    font-family: Inter;
     font-size: 15px;
     font-weight: 400;
     cursor: pointer;
     background-color: #DD8EA4;
     color : #31383F;
+    font-family: "source-han-sans-korean", sans-serif;
 }
 
 /*Recommend result*/
