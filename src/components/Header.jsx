@@ -11,7 +11,7 @@ const MainHeader = styled.p`
   line-height: normal;
   margin: 0;
   padding-top: 1.56rem;
-  margin-bottom: 0.94rem;
+  padding-bottom: 0.94rem;
 `
 
 const NoticeBox = styled.div`
