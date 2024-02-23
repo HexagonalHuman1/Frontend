@@ -9,6 +9,12 @@ export default function ToDo({content}) {
   const [completedCount, setCompletedCount] = useState(0);
   const [active, setActive] = useState(false);
 
+  useEffect(() => {
+    const currentColorActive = localStorage.getItem("color") === "true";
+    setActive(currentColorActive);
+    console.log(currentColorActive);
+  }, []);
+
   let navigate = useNavigate();
 
   function moveAddListHandler() {
@@ -17,7 +23,9 @@ export default function ToDo({content}) {
 
   function handleDeleteList(content) {
     setMainList(prev => {
-      return prev.filter((item) => item !== content);
+      const updatedList = prev.filter((item) => item !== content);
+      localStorage.setItem("todoLists", JSON.stringify(updatedList));
+      return updatedList;
     })
   }
 
@@ -26,13 +34,12 @@ export default function ToDo({content}) {
   }
 
   useEffect(() => {
-    if(completedCount === mainList.length && mainList.length > 0) {
-      setActive(true);
-    }
-    else {
-      setActive(false);
-    }
-  }, [completedCount, mainList.length]);
+    localStorage.setItem("color", String(active));
+  },[active]);
+
+  useEffect(() => {
+    setActive(completedCount === mainList.length && mainList.length > 0 )
+  }, [completedCount, mainList.length, active]);
 
   return (
     <>

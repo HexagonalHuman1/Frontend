@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import Header from "../components/Header";
 import "./main.css";
 import Diary from "../diary/Diary";
@@ -12,8 +11,7 @@ export default function Main() {
   const [diaryButton, setDiaryButton] = useState(false);
   const [edit, setEdit] = useState(false);
 
-  const location = useLocation();
-  const selectedlist = location.state?.selectedContents;
+  const selectedlist = JSON.parse(localStorage.getItem("todoLists"));
 
   function handleDiaryActive() {
     setDiaryButton(true);

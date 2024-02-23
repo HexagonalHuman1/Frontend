@@ -69,6 +69,8 @@ export default function TodoDate({active}) {
   const currentDate = today.getDay();
   const days = ["월", "화", "수", "목", "금", "토", "일"];
 
+  const colorActive = localStorage.getItem("color");
+
   return (
     <>
       <DateTextContainer>
@@ -104,7 +106,7 @@ export default function TodoDate({active}) {
                 {day}
               </DayText>
               <DateActiveBox
-                active={active}
+                active={active && colorActive}
                 divIndex={currentDate === index+1}
               />
             </DateContainer>

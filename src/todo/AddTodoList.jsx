@@ -86,7 +86,8 @@ export default function AddTodoList() {
   }
 
   function moveMainHandler() {
-    navigate("/", {state: { selectedContents }});
+    navigate("/");
+    localStorage.setItem("todoLists", JSON.stringify(selectedContents));
   }
 
   return (
