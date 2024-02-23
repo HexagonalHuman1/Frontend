@@ -3,7 +3,8 @@ import closeImg from "../img/pinkClose.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import picture from "../img/picture.png";
 import ChoiceList from "../components/ChoiceList";
-import { useEffect } from "react";
+import { useState } from "react";
+import camo from '../img/camo.jpg';
 
 const TitleText = styled.p`
   color: #DD8EA4;
@@ -108,6 +109,8 @@ export default function CreateDairy() {
 
   const location = useLocation();
   const selectedlist = location.state?.content;
+  const [selectedImage, setSelectedImage] = useState(null);
+
 
 
   const today = new Date();
@@ -121,6 +124,17 @@ export default function CreateDairy() {
     navigate("/");
   }
 
+  const handleImageChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setSelectedImage(reader.result);
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  };
+
   return (
     <div style={{background: "white"}}>
       <TitleText>일기 작성</TitleText>
@@ -130,12 +144,19 @@ export default function CreateDairy() {
         <div style={{textAlign: "center"}}><UserTitle placeholder="제목을 입력하세요" /></div>
         <DateText>{year}년 {month}월 {date}일 {days[day]}</DateText>
         <UploadImgContainer>
-          <input type="file" id="imgUpload" multiple accept=".png, .jpg, .jpeg" style={{display: "none"}} />
-          <label htmlFor="imgUpload" >
-            <div style={{borderRadius: "1rem", border: "1px solid #DD8EA4", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer"}}>
-              <img src={picture} alt="pictureImg" />
-            </div>
-          </label>
+
+        {selectedImage ? (
+          <img src={selectedImage} alt="selected" style={{ width: "50%", height: "100%", borderRadius: "0.9375rem" }} />
+        ) : (
+          <>
+            <input type="file" id="imgUpload" multiple accept=".png, .jpg, .jpeg" style={{display: "none"}} onChange={handleImageChange} />
+            <label htmlFor="imgUpload" >
+              <div style={{borderRadius: "1rem", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer"}}>
+                <img src={picture} alt="" />
+              </div>
+            </label>
+          </>
+        )}
         </UploadImgContainer>
         <ChoiceText>일기로 쓸 할 일을 선택하세요</ChoiceText>
         <div style={{marginTop: "1.31rem", display: "flex", flexDirection: "column", gap: "0.5rem"}}>

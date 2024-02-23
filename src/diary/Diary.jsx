@@ -33,10 +33,14 @@ export default function Diary({edit, setEdit, content}) {
   const today = new Date();
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth() + 1;
+  const [flag, setFlag]=useState(1);
 
   function moveCreateDiary() {
+    setFlag(1);
+    localStorage.setItem('flag', flag);
     navigate("/createDiary", {state: {content}});
   }
+  
 
   const handleCloseEdit = () => {
     setEdit(false);
