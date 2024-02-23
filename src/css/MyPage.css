@@ -47,6 +47,9 @@ ul{
 li{
     margin: 15px 0px;
 }
+li:hover {
+    cursor: pointer;
+}
 hr{
     border-color:#CA3039;
     margin-right: 15px;
