@@ -33,7 +33,7 @@ export default function SelectedMain() {
         <button className={diaryButton ? "selectButton buttonActive" : "selectButton"} onClick={handleDiaryActive}>일기쓰기</button>
       </div>
       {todoButton && <SelectedToDo content={selectedlist} />}
-      {diaryButton && <Diary edit={edit} setEdit={setEdit} />}
+      {diaryButton && <Diary edit={edit} setEdit={setEdit} content={selectedlist} />}
 
       <SelectedNav />
     </>

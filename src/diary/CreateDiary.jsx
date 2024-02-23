@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import closeImg from "../img/pinkClose.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import picture from "../img/picture.png";
 import ChoiceList from "../components/ChoiceList";
+import { useEffect } from "react";
 
 const TitleText = styled.p`
   color: #DD8EA4;
@@ -11,7 +12,7 @@ const TitleText = styled.p`
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
-  line-heght: normal;
+  line-height: normal;
   margin: 0;
   padding-top: 1.56rem;
 `  
@@ -105,6 +106,10 @@ const AIText = styled.p`
 export default function CreateDairy() {
   let navigate = useNavigate();
 
+  const location = useLocation();
+  const selectedlist = location.state?.content;
+
+
   const today = new Date();
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
@@ -117,7 +122,7 @@ export default function CreateDairy() {
   }
 
   return (
-    <>
+    <div style={{background: "white"}}>
       <TitleText>일기 작성</TitleText>
       <img src={closeImg} alt="closeImg" style={{position: "absolute", left: "1.44rem", top: "1.62rem", cursor: "pointer"}} onClick={moveMain} />
       <form>
@@ -134,14 +139,14 @@ export default function CreateDairy() {
         </UploadImgContainer>
         <ChoiceText>일기로 쓸 할 일을 선택하세요</ChoiceText>
         <div style={{marginTop: "1.31rem", display: "flex", flexDirection: "column", gap: "0.5rem"}}>
-          <ChoiceList />
-          <ChoiceList />
-          <ChoiceList />
+          {Array.isArray(selectedlist) && selectedlist.map((item, index) => {
+            return <ChoiceList item={item} key={index} />
+          })}
         </div>
         <AITextBox>
           <AIText>AI로 쓰기</AIText>
         </AITextBox>
       </form>
-    </>
+    </div>
   )
 }

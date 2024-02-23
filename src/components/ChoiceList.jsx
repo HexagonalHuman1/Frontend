@@ -21,10 +21,10 @@ const ChoiceContent = styled.p`
   margin: 0;
 `
 
-export default function ChoiceList() {
+export default function ChoiceList({item}) {
   return (
     <ChoiceListContainer>
-      <ChoiceContent></ChoiceContent>
+      <ChoiceContent>{item}</ChoiceContent>
       <img src={pinkRadioImg} alt="pinkRadioImg" style={{position: "absolute", right: "0"}} />
     </ChoiceListContainer>
   )

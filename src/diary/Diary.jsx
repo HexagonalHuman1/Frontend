@@ -28,14 +28,14 @@ const MonthRecord = styled.p`
   line-height: normal;
 `
 
-export default function Diary({edit, setEdit}) {
+export default function Diary({edit, setEdit, content}) {
   let navigate = useNavigate();
   const today = new Date();
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth() + 1;
 
   function moveCreateDiary() {
-    navigate("/createDiary");
+    navigate("/createDiary", {state: {content}});
   }
 
   const handleCloseEdit = () => {
