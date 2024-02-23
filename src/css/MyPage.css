@@ -21,11 +21,14 @@
 .profile_content{
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 .profile_name{
     font-size: 20px;
     font-weight: 600;
+}
+.profile_email, .profile_info{
+    font-size:12px;
 }
 .mypage_menu{
     padding: 25px 25px;
@@ -34,7 +37,7 @@
 .mypage_menutitle{
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-right: 20px;
 }
 ul{

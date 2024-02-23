@@ -11,6 +11,7 @@ const StyledButton = styled.button`
     font-size: 15px;
     font-weight: 400;
     cursor: pointer;
+    font-family: "source-han-sans-korean", sans-serif;
 
   color: ${(props) => props.color || "#31383F"};
   background: ${(props) => props.background || "#DD8EA4"};

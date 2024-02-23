@@ -30,8 +30,8 @@ const MyPage = () => {
                 <div className='profile_content'>
                     <div>
                         <p><span className='profile_name'>제준</span><br/>
-                        <span>33.beautifulboy@gmail.com</span><br/>
-                        <span>안녕하세요</span></p>
+                        <span className='profile_email'>33.beautifulboy@gmail.com</span><br/>
+                        <span className='profile_info'>안녕하세요</span></p>
                     </div>
             </div>
         </div>

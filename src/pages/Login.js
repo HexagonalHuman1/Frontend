@@ -19,7 +19,7 @@ const Login = () => {
                 <form className='login_form'>
                     <input type="text" placeholder='이메일' className='email'/><br/>
                     <input type="password" placeholder='비밀번호' className='pw'/>
-                    <Mbutton color={'#000'}>로그인</Mbutton>
+                    <StyledLink to='/'><Mbutton color={'#000'}>로그인</Mbutton></StyledLink>
                 </form>
                 <StyledLink to='/signup'><div className='login_sub'>아직 계정이 없나요?
                 <span className='login_join'> 회원가입하기</span></div></StyledLink>
