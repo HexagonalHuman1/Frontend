@@ -23,6 +23,7 @@ const NavContainer = styled.div`
     align-items: center;
     padding-bottom: 9px;
     max-width: 350px;
+    margin-top : 100px;
 `;
 
 const NavLink = styled(Link)`

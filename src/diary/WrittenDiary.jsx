@@ -61,7 +61,15 @@ align-items : center;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+
 `
+
+const Container = styled.div`
+padding-bottom: 80px;
+  overflow-y: auto; 
+  overflow-x: hidden;
+`;
+
 export default function WrittenDiary({edit, setEdit}) {
   const [userTitle,setUserTitle] = useState("재잘재잘캐모마일");
   const today = new Date();
@@ -83,7 +91,7 @@ export default function WrittenDiary({edit, setEdit}) {
     setEdit(true);
   }
 
-  return (<>
+  return (<Container>
     {flag === 1 && (
         <DiaryContainer>
           <img src={dots} alt="dotsImg" style={{width: "1.25rem", height: "1.2rem", position: "absolute", top: "1.2rem", right: "1.87rem", cursor: "pointer"}} onClick={handleEdit} />
@@ -111,6 +119,6 @@ export default function WrittenDiary({edit, setEdit}) {
       하루를 마무리했다.
       </Content>
     </DiaryContainer>
-    </>
+    </Container>
   )
 }
